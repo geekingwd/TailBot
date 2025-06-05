@@ -1,12 +1,12 @@
 TailBot🐕‍🦺
-AI-powered animal rescue assistant with first-aid chatbot, vet locator, and multilingual support.
+AI-powered animal rescue assistant with first-aid chatbot, vet locator, and multilingual support.  
 
 🐾 Helping stray and pet animals with AI-driven first-aid guidance, emergency vet locator, and multilingual voice support.
 
 ##📖 About the Project Tail Bot is an AI-powered animal rescue assistant designed to:
 
-✔️ Provide first-aid guidance for injured or sick animals.
-✔️ Offer a vet locator based on the user's location.
+-✔️ Provide first-aid guidance for injured or sick animals.
+-✔️ Offer a vet locator based on the user's location.
 ✔️ Support multilingual voice recognition (English & Hindi).
 ✔️ Allow users to share rescue stories and experiences.(Coming soon)
 ✔️ Help NGOs & individuals rescue and care for strays.

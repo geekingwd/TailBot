@@ -1,14 +1,14 @@
 export const fetchGroq = async (userMessage: string): Promise<string> => {
-  const GROQ_API_KEY = "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"; // paste your real key here
+  const apiKey = import.meta.env.VITE_GROQ_API_KEY; // ✅ Correct way
 
   const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${GROQ_API_KEY}`,
+      Authorization: `Bearer ${apiKey}`, // ✅ Corrected
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "llama3-70b-8192", // ✅ using LLaMA 3
+      model: "llama3-70b-8192", // ✅ using LLaMA 3 model
       messages: [
         {
           role: "system",
@@ -26,20 +26,20 @@ Important:
 - Never recommend medications.
 - Always be polite, supportive, and kind.
 - Keep answers simple and easy to understand.
-
-          `.trim()
+`.trim()
         },
         {
           role: "user",
           content: userMessage
         }
       ],
-      temperature: 0.5, // Optional: makes replies a bit creative but controlled
-      max_tokens: 500   // Optional: controls max reply length
+      temperature: 0.5,
+      max_tokens: 500
     })
   });
 
   const data = await res.json();
+  console.log("🐾 Groq API Raw Response:", data);
 
   return data.choices?.[0]?.message?.content || "Sorry, I couldn't process that. 🐾";
 };

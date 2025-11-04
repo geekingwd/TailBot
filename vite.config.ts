@@ -1,14 +1,19 @@
-import react from "@vitejs/plugin-react";
-import tailwind from "tailwindcss";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "node:path";
+import tailwindcss from "tailwindcss";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "./",
+  base: "/", // ✅ ensures assets resolve correctly on Netlify
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"), // ✅ fix alias imports like "@/components/..."
+    },
+  },
   css: {
     postcss: {
-      plugins: [tailwind()],
+      plugins: [tailwindcss()],
     },
   },
 });

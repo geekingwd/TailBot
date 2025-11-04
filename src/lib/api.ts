@@ -8,7 +8,7 @@ export const fetchGroq = async (userMessage: string): Promise<string> => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "llama3-70b-8192", // ✅ using LLaMA 3 model
+      model: "llama-3.3-70b-versatile", // ✅ using LLaMA 3 model
       messages: [
         {
           role: "system",

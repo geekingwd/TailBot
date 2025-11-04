@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# React SPA fallback — avoids 404 on refresh or deep links
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
